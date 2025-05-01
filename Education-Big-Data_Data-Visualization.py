@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # 讀取用戶上傳的 CSV 檔案
-file_path = r'D:\Desktop\校務\114\教育大數據\user_data_re.csv'
+file_path = r'D:\Documents\Education-Big-Data_Data-Visualization\user_data_re.csv'
 df = pd.read_csv(file_path)
 
 # 檢視前幾行數據

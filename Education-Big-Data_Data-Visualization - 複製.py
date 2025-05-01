@@ -7,11 +7,11 @@ import seaborn as sns
 st.set_page_config(page_title="Student Scores Dashboard", layout="wide")
 st.title("📊 Student Scores Dashboard")
 
-# 固定檔案路徑（請修改為你的實際路徑）
-file_path = 'user_data_re.csv'  # ⚠️ 確認放在專案目錄或用相對路徑
+# 上傳檔案
+uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
 
-try:
-    df = pd.read_csv(file_path)
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
     
     # 顯示前幾筆資料
     st.subheader("Data Preview")
@@ -38,8 +38,5 @@ try:
             axes[i].set_axis_off()
     
     st.pyplot(fig)
-
-except FileNotFoundError:
-    st.error(f"❌ File not found: {file_path}")
-except Exception as e:
-    st.error(f"❌ An error occurred: {e}")
+else:
+    st.warning("Please upload a CSV file to continue.")

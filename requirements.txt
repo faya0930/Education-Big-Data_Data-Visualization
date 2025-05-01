@@ -1,4 +1,4 @@
 streamlit
-pandas as plt
+pandas
 matplotlib
 seaborn
